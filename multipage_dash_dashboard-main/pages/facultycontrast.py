@@ -12,17 +12,6 @@ dash.register_page(
     suppress_callback_exceptions=True,
 )
 
-data = {
-    "A": [3, 1, 0, 5, 4, 2],
-    "B": [2, 4, 1, 0, 3, 5],
-    "C": [0, 5, 4, 2, 1, 3],
-    "D": [4, 1, 2, 5, 0, 3],
-    "E": [2, 4, 5, 0, 3, 1],
-    "F": [5, 3, 0, 4, 1, 2],
-    "G": [3, 1, 5, 4, 0, 2],
-    "H": [1, 0, 4, 5, 2, 3],
-}
-
 avg_metrics = {
     "A": [4, 4.2, 4.3, 4.4, 4.5, 4.6],
     "B": [3.8, 3.9, 3.7, 3.8, 3.9, 4],
@@ -43,6 +32,17 @@ categories = [
     "Faculty Preparation",
 ]
 
+colors = {
+    "A": "#a1ff0a",  # green
+    "B": "#fee440",  # yellow
+    "C": "#ff9e00",  # orange
+    "D": "#fc2f00",  # red
+    "E": "#b5179e",  # purple
+    "F": "#023e8a",  # blue
+    "G": "#40916c",  # dark green
+    "H": "#07c8f9",  # blue light
+}
+
 
 @callback(
     Output("graph-container", "figure"),
@@ -57,6 +57,7 @@ def update_graph(value1, value2):
             r=avg_metrics[value1],
             theta=categories,
             fill="toself",
+            line_color=colors[value1],
             name=f"Faculty {value1}",
         )
     )
@@ -66,6 +67,7 @@ def update_graph(value1, value2):
             r=avg_metrics[value2],
             theta=categories,
             fill="toself",
+            linecolor=colors[value2],
             name=f"Faculty {value2}",
         )
     )
@@ -195,13 +197,19 @@ layout = html.Div(
         html.Div(
             className="row mt-4",
             children=[
-                html.Div(id="avg-metrics-1", className="col-3 text-center fw-semibold fs-4"),
-                html.Div(className="col-6 text-center",
-                    children=[
-                        html.Div(metric, className="m-4 fw-semibold fs-4") for metric in categories
-                    ]
+                html.Div(
+                    id="avg-metrics-1", className="col-3 text-center fw-semibold fs-4"
                 ),
-                html.Div(id="avg-metrics-2", className="col-3 text-center fw-semibold fs-4"),
+                html.Div(
+                    className="col-6 text-center",
+                    children=[
+                        html.Div(metric, className="m-4 fw-semibold fs-4")
+                        for metric in categories
+                    ],
+                ),
+                html.Div(
+                    id="avg-metrics-2", className="col-3 text-center fw-semibold fs-4"
+                ),
             ],
         ),
     ],
