@@ -61,7 +61,7 @@ faculty_data = {
     "image": "image.png",
 }
 
-# Sfor time series graph
+# for time series graph
 data = {
     "Subject Knowledge": [4, 4.2, 4.3, 4.4, 4.5, 4.6],
     "Regularity & Punctuality": [3.8, 3.9, 3.7, 3.8, 3.9, 4],

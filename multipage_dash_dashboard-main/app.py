@@ -31,7 +31,12 @@ app.layout = html.Div(
                     href="/facultyfocus",
                     className="btn btn-dark border border-light m-2 fs-5",
                 ),
-            ], className="container-fluid",
+                dcc.Link(
+                    "Faculty Contrast",
+                    href="/facultycontrast",
+                    className="btn btn-dark border border-light m-2 fs-5",
+                ),
+            ], className="container-fluid mt-2",
         ),
         dash.page_container,
     ],
