@@ -33,8 +33,8 @@ categories = [
 ]
 
 colors = {
-    "A": "#a1ff0a",  # green
-    "B": "#fee440",  # yellow
+    "A": "#ffea00",  # yllow
+    "B": "#db00b6",  # pink
     "C": "#ff9e00",  # orange
     "D": "#fc2f00",  # red
     "E": "#b5179e",  # purple
@@ -67,7 +67,7 @@ def update_graph(value1, value2):
             r=avg_metrics[value2],
             theta=categories,
             fill="toself",
-            linecolor=colors[value2],
+            line_color=colors[value2],
             name=f"Faculty {value2}",
         )
     )
@@ -113,7 +113,10 @@ def update_faculty_names(value1, value2):
 )
 def update_avg_metrics_1(value):
     avg_values = avg_metrics[value]
-    return [html.Div(avg_values[i], className="m-4") for i in range(len(categories))]
+    return [
+        html.Div(avg_values[i], className="m-4", style={"color": colors[value]})
+        for i in range(len(categories))
+    ]
 
 
 @callback(
@@ -122,7 +125,10 @@ def update_avg_metrics_1(value):
 )
 def update_avg_metrics_2(value):
     avg_values = avg_metrics[value]
-    return [html.Div(avg_values[i], className="m-4") for i in range(len(categories))]
+    return [
+        html.Div(avg_values[i], className="m-4", style={"color": colors[value]})
+        for i in range(len(categories))
+    ]
 
 
 ####################### PAGE LAYOUT #############################
