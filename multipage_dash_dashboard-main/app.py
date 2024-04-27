@@ -17,7 +17,7 @@ app.layout = html.Div(
         html.Br(),
         html.P(
             "Faculty Feedback | Semester 4 | 2023-24",
-            className="text-light text-center fw-bold fs-1",
+            className="text-light text-center fw-bold fs-1 m-0 p-0",
         ),
         html.Div(
             children=[

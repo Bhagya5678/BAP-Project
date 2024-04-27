@@ -78,41 +78,45 @@ layout = html.Div(
                 html.Div(
                     className="col-md-2 col-sm-6 mb-4 mx-4",
                     children=[
-                        html.Div(
-                            className="card bg-dark text-light border shadow p-2",
-                            style={"width": "15rem", "height": "22rem"},
-                            children=[
-                                html.Div(
-                                    className="card-body d-flex align-items-center justify-content-center",
-                                    children=[
-                                        html.Img(
-                                            src="../assets/image.png",
-                                            alt="Faculty Image",
-                                            style={
-                                                "borderRadius": "50%",
-                                                "width": "10rem",
-                                            },
-                                            className = "m-0 p-0"
-                                        ),
-                                    ],
-                                ),
-                                html.H5(
-                                    f"Faculty {faculty['Faculty']}",
-                                    className="card-title m-0 p-0",
-                                ),
-                                html.P(
-                                    f"Joined in {faculty['joined']}",
-                                    className="card-text m-0 p-0",
-                                ),
-                                html.P(
-                                    f"Subjects: {', '.join(faculty['subjects'])}",
-                                    className="card-text m-0 p-0",
-                                ),
-                                html.P(
-                                    f"Areas of Interest: {', '.join(faculty['areas_of_interest'])}",
-                                    className="card-text m-0 p-0 ",
-                                ),
-                            ],
+                        dcc.Link(
+                            html.Div(
+                                className="card bg-dark text-light border shadow p-2",
+                                style={"width": "15rem", "height": "22rem"},
+                                children=[
+                                    html.Div(
+                                        className="card-body d-flex align-items-center justify-content-center",
+                                        children=[
+                                            html.Img(
+                                                src="../assets/image.png",
+                                                alt="Faculty Image",
+                                                style={
+                                                    "borderRadius": "50%",
+                                                    "width": "10rem",
+                                                },
+                                                className="m-0 p-0",
+                                            ),
+                                        ],
+                                    ),
+                                    html.H5(
+                                        f"Faculty {faculty['Faculty']}",
+                                        className="card-title m-0 p-0 text-decoration-none",
+                                    ),
+                                    html.P(
+                                        f"Joined in {faculty['joined']}",
+                                        className="card-text m-0 p-0 text-decoration-none",
+                                    ),
+                                    html.P(
+                                        f"Subjects: {', '.join(faculty['subjects'])}",
+                                        className="card-text m-0 p-0 text-decoration-none",
+                                    ),
+                                    html.P(
+                                        f"Areas of Interest: {', '.join(faculty['areas_of_interest'])}",
+                                        className="card-text m-0 p-0 text-decoration-none",
+                                    ),
+                                ],
+                            ),
+                            href=f"/facultyfocus/{faculty['Faculty']}",
+                            className="text-decoration-none text-center",
                         )
                     ],
                 )
