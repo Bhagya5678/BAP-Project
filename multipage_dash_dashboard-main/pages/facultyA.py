@@ -19,6 +19,8 @@ categories = [
 data_set1 = [4, 3, 2, 5, 4, 3]
 data_set2 = [3, 4, 3, 4, 2, 5]
 
+colors = ["#F55C7A", "#F56C77", "#F57C73", "#F68C70", "#F69C6D", "#F6AC69", "#F6BC66"]
+
 # Create radar plot
 fig3 = go.Figure()
 
@@ -39,6 +41,7 @@ fig3.update_layout(
             tickvals=categories,
             ticktext=categories,
         ),
+        bgcolor="#212529",
     ),
     showlegend=True,
     paper_bgcolor="#212529",  # Setting paper background color
@@ -154,7 +157,7 @@ layout = html.Div(
                 html.Div(
                     className="col-4",
                     children=[
-                        dcc.Graph(
+                        dcc.Graph( #common graph top middle
                             id="my-graph",
                             figure={
                                 "data": [
@@ -162,7 +165,7 @@ layout = html.Div(
                                         "x": metrics,
                                         "y": [4.2, 4.5, 3.9, 4.7, 4.3, 4.6, 4.4],
                                         "type": "bar",
-                                        "marker": {"color": "white"},
+                                        "marker": {"color": colors},
                                     }
                                 ],
                                 "layout": {
@@ -233,25 +236,23 @@ layout = html.Div(
             className="row",
             children=[
                 html.Div(
-                    className="col-3",
+                    className="col-3 m-0",
                     children=[
                         dcc.Graph(
                             figure={
                                 "data": [
                                     {
                                         "x": [1, 2, 3, 4, 5],
-                                        "y": list(metric_data.values())[
-                                            0
-                                        ],  # Accessing the list of values
+                                        "y": list(metric_data.values())[0],
                                         "type": "bar",
-                                        "marker": {"color": "white"},
+                                        "marker": {"color": colors[index]},
                                     }
                                 ],
                                 "layout": {
                                     "autosize": True,
                                     "margin": {"l": 46, "r": 46, "b": 46, "t": 40},
                                     "title": {
-                                        "text": f"{list(metric_data.keys())[0]}",  # Accessing the metric name
+                                        "text": f"{list(metric_data.keys())[0]}",
                                         "font": {"color": "white"},
                                     },
                                     "plot_bgcolor": "#212529",
@@ -269,8 +270,9 @@ layout = html.Div(
                             },
                         )
                     ],
+                    style={"marginLeft": "2rem"},
                 )
-                for metric_data in metricwise_avg
+                for index, metric_data in enumerate(metricwise_avg)
             ],
         ),  # div 2 ends
         html.H1("Subject-wise Comparison", className="text-center mt-4"),
@@ -279,12 +281,12 @@ layout = html.Div(
         html.Img(
             src="../assets/A.png",
             className="",
-            style={"width":"35%", "margin-left": "5%"},
+            style={"width": "35%", "margin-left": "5%"},
         ),
         html.Img(
             src="../assets/A2.png",
             className="",
-            style={ "margin": "5%", "width":"50%"},
+            style={"margin": "5%", "width": "50%"},
         ),
     ],
 )

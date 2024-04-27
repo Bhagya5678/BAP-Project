@@ -80,8 +80,13 @@ layout = html.Div(
                     children=[
                         dcc.Link(
                             html.Div(
-                                className="card bg-dark text-light border shadow p-2",
-                                style={"width": "15rem", "height": "22rem"},
+                                className="card bg-dark border shadow p-2",
+                                style={
+                                    "width": "15rem",
+                                    "height": "22rem",
+                                    "color": "#ffffff",
+                                    "border-color": "#ffffff",
+                                },
                                 children=[
                                     html.Div(
                                         className="card-body d-flex align-items-center justify-content-center",
@@ -99,19 +104,19 @@ layout = html.Div(
                                     ),
                                     html.H5(
                                         f"Faculty {faculty['Faculty']}",
-                                        className="card-title m-0 p-0 text-decoration-none",
+                                        className="card-title m-0 p-0",
                                     ),
                                     html.P(
                                         f"Joined in {faculty['joined']}",
-                                        className="card-text m-0 p-0 text-decoration-none",
+                                        className="card-text m-0 p-0",
                                     ),
                                     html.P(
                                         f"Subjects: {', '.join(faculty['subjects'])}",
-                                        className="card-text m-0 p-0 text-decoration-none",
+                                        className="card-text m-0 p-0",
                                     ),
                                     html.P(
                                         f"Areas of Interest: {', '.join(faculty['areas_of_interest'])}",
-                                        className="card-text m-0 p-0 text-decoration-none",
+                                        className="card-text m-0 p-0",
                                     ),
                                 ],
                             ),

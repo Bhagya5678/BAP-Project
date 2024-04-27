@@ -19,6 +19,8 @@ categories = [
 data_set1 = [4, 3, 2, 5, 4, 3]
 data_set2 = [3, 4, 3, 4, 2, 5]
 
+colors = ["#103783", "#274b91", "#3e5fa0", "#5673ae", "#6d87bc", "#849bcb", "#9bafd9"]
+
 # Create radar plot
 fig3 = go.Figure()
 
@@ -39,6 +41,7 @@ fig3.update_layout(
             tickvals=categories,
             ticktext=categories,
         ),
+        bgcolor="#212529",
     ),
     showlegend=True,
     paper_bgcolor="#212529",  # Setting paper background color
@@ -124,7 +127,7 @@ def update_graph(selected_metric):
 layout = html.Div(
     className="mt-4 p-4",
     children=[
-        html.H1("Faculty A"),  # heading separate line
+        html.H1("Faculty E"),  # heading separate line
         html.Hr(),
         html.Div(
             className="row mt-4",
@@ -162,7 +165,7 @@ layout = html.Div(
                                         "x": metrics,
                                         "y": [4.2, 4.5, 3.9, 4.7, 4.3, 4.6, 4.4],
                                         "type": "bar",
-                                        "marker": {"color": "white"},
+                                        "marker": {"color": colors},
                                     }
                                 ],
                                 "layout": {
@@ -214,7 +217,9 @@ layout = html.Div(
                                         # Graph column
                                         html.Div(
                                             className="col-md-12",
-                                            children=[dcc.Graph(id="timeseries-graph-E")],
+                                            children=[
+                                                dcc.Graph(id="timeseries-graph-E")
+                                            ],
                                         )
                                     ],
                                 )
@@ -231,25 +236,23 @@ layout = html.Div(
             className="row",
             children=[
                 html.Div(
-                    className="col-3",
+                    className="col-3 m-0",
                     children=[
                         dcc.Graph(
                             figure={
                                 "data": [
                                     {
                                         "x": [1, 2, 3, 4, 5],
-                                        "y": list(metric_data.values())[
-                                            0
-                                        ],  # Accessing the list of values
+                                        "y": list(metric_data.values())[0],
                                         "type": "bar",
-                                        "marker": {"color": "white"},
+                                        "marker": {"color": colors[index]},
                                     }
                                 ],
                                 "layout": {
                                     "autosize": True,
                                     "margin": {"l": 46, "r": 46, "b": 46, "t": 40},
                                     "title": {
-                                        "text": f"{list(metric_data.keys())[0]}",  # Accessing the metric name
+                                        "text": f"{list(metric_data.keys())[0]}",
                                         "font": {"color": "white"},
                                     },
                                     "plot_bgcolor": "#212529",
@@ -267,8 +270,9 @@ layout = html.Div(
                             },
                         )
                     ],
+                    style={"marginLeft": "2rem"},
                 )
-                for metric_data in metricwise_avg
+                for index, metric_data in enumerate(metricwise_avg)
             ],
         ),  # div 2 ends
         html.H1("Subject-wise Comparison", className="text-center mt-4"),
@@ -277,12 +281,12 @@ layout = html.Div(
         html.Img(
             src="../assets/E.png",
             className="",
-            style={"width":"35%", "margin-left": "5%"},
+            style={"width": "35%", "margin-left": "5%"},
         ),
         html.Img(
             src="../assets/E2.png",
             className="",
-            style={ "margin": "5%", "width":"50%"},
+            style={"margin": "5%", "width": "50%"},
         ),
     ],
 )
