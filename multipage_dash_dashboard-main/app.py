@@ -22,11 +22,15 @@ app.layout = html.Div(
         html.Div(
             children=[
                 dcc.Link(
-                    page["name"],
-                    href=page["relative_path"],
+                    "Department Overview",
+                    href="/",
                     className="btn btn-dark border border-light m-2 fs-5",
-                )
-                for page in dash.page_registry.values()
+                ),
+                dcc.Link(
+                    "Faculty Focus",
+                    href="/facultyfocus",
+                    className="btn btn-dark border border-light m-2 fs-5",
+                ),
             ], className="container-fluid",
         ),
         dash.page_container,
