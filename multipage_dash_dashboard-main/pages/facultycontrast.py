@@ -104,7 +104,10 @@ def update_graph(value1, value2):
     [Input("dropdown1", "value"), Input("dropdown2", "value")],
 )
 def update_faculty_names(value1, value2):
-    return f"Faculty {value1}", f"Faculty {value2}"
+    return (
+        html.H2(f"Faculty {value1}", style={"color": colors[value1]}),
+        html.H2(f"Faculty {value2}", style={"color": colors[value2]}),
+    )
 
 
 @callback(
@@ -163,7 +166,7 @@ layout = html.Div(
                             value="A",
                             clearable=False,
                             style={"width": "100%", "backgroundColor": "#212529"},
-                            className="bg-dark text-light border border-light",
+                            className="bg-dark text-light",
                         ),
                     ],
                 ),
@@ -194,7 +197,7 @@ layout = html.Div(
                             value="B",
                             clearable=False,
                             style={"width": "100%", "backgroundColor": "#212529"},
-                            className="bg-dark text-light border border-light",
+                            className="bg-dark text-light",
                         ),
                     ],
                 ),
