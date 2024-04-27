@@ -7,7 +7,6 @@ dash.register_page(__name__, path="/", name="Department Overview")
 
 import pandas as pd
 
-data = pd.read_csv("feedback.csv")
 faculty_data = [
     {
         "Faculty": "A",
@@ -51,8 +50,7 @@ faculty_data = [
     },
 ]
 
-total_responses = len(data)
-unique_faculty = data["Faculty"].unique()
+unique_faculty = ["A", "B", "C", "D", "E", "F", "G", "H"]
 unique_subjects = [
     "Blockchain Technology (BCT)",
     "Big Data Analytics (BDA)",
@@ -65,8 +63,6 @@ unique_subjects = [
     "Operating Systems (OS)",
 ]
 
-# Group faculties by subjects
-grouped_data = data.groupby("Subject")["Faculty"].apply(set).reset_index()
 labels = [
     "CE Dept",
     "BCT",
