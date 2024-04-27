@@ -100,14 +100,16 @@ metricwise_avg = [
 ]
 
 
+
 def create_graph(selected_metric="Overall Acceptance"):
     # Create a line chart
     fig = px.line(
         x=years,
         y=data[selected_metric],
         labels={"x": "Year", "y": selected_metric},
+        markers=True,
     )
-
+    fig.update_traces(line_color=colors[0], marker_color=colors[3])
     fig.update_layout(
         paper_bgcolor="#212529",
         plot_bgcolor="#212529",
@@ -157,7 +159,7 @@ layout = html.Div(
                 html.Div(
                     className="col-4",
                     children=[
-                        dcc.Graph( #common graph top middle
+                        dcc.Graph(  # common graph top middle
                             id="my-graph",
                             figure={
                                 "data": [

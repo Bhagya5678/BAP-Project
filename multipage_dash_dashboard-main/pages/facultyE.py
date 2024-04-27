@@ -106,8 +106,9 @@ def create_graph(selected_metric="Overall Acceptance"):
         x=years,
         y=data[selected_metric],
         labels={"x": "Year", "y": selected_metric},
+        markers=True,
     )
-
+    fig.update_traces(line_color=colors[0], marker_color=colors[3])
     fig.update_layout(
         paper_bgcolor="#212529",
         plot_bgcolor="#212529",
