@@ -1,0 +1,14 @@
+dash
+plotly
+flask
+flask-compress
+flask-caching
+flask-debugtoolbar
+flask-testing
+flask-login
+flask-sqlalchemy
+sqlalchemy
+pandas
+numpy
+scipy
+scikit-learn
