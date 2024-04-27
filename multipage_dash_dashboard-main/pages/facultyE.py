@@ -5,7 +5,7 @@ import plotly.express as px
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 
-dash.register_page(__name__, path="/facultyfocus/A", name="Faculty A")
+dash.register_page(__name__, path="/facultyfocus/E", name="Faculty E")
 
 # Sample data
 categories = [
@@ -114,7 +114,7 @@ def create_graph(selected_metric="Overall Acceptance"):
     return fig
 
 
-@callback(Output("timeseries-graph-A", "figure"), [Input("metric-dropdown", "value")])
+@callback(Output("timeseries-graph-E", "figure"), [Input("metric-dropdown", "value")])
 def update_graph(selected_metric):
     # Plotly express line chart
     return create_graph(selected_metric)
@@ -214,7 +214,7 @@ layout = html.Div(
                                         # Graph column
                                         html.Div(
                                             className="col-md-12",
-                                            children=[dcc.Graph(id="timeseries-graph-A")],
+                                            children=[dcc.Graph(id="timeseries-graph-E")],
                                         )
                                     ],
                                 )
