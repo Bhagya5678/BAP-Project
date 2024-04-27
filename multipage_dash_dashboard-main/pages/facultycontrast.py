@@ -54,13 +54,19 @@ def update_graph(value1, value2):
 
     fig.add_trace(
         go.Scatterpolar(
-            r=avg_metrics[value1], theta=categories, fill="toself", name=f"Faculty {value1}"
+            r=avg_metrics[value1],
+            theta=categories,
+            fill="toself",
+            name=f"Faculty {value1}",
         )
     )
 
     fig.add_trace(
         go.Scatterpolar(
-            r=avg_metrics[value2], theta=categories, fill="toself", name=f"Faculty {value2}"
+            r=avg_metrics[value2],
+            theta=categories,
+            fill="toself",
+            name=f"Faculty {value2}",
         )
     )
 
@@ -105,19 +111,7 @@ def update_faculty_names(value1, value2):
 )
 def update_avg_metrics_1(value):
     avg_values = avg_metrics[value]
-    metric_elements = []
-    for i, metric in enumerate(categories):
-        metric_elements.append(
-            html.P(
-                children=[
-                    html.Span(metric, style={"font-weight": "bold"}),
-                    html.Span(": ", style={"margin-right": "4px"}),
-                    html.Span(avg_values[i], style={"font-weight": "normal"}),
-                ],
-                style={"margin-bottom": "4px"},
-            )
-        )
-    return metric_elements
+    return [html.Div(avg_values[i], className="m-4") for i in range(len(categories))]
 
 
 @callback(
@@ -126,25 +120,7 @@ def update_avg_metrics_1(value):
 )
 def update_avg_metrics_2(value):
     avg_values = avg_metrics[value]
-    metric_elements = []
-    for i, metric in enumerate(categories):
-        metric_elements.append(
-            html.P(
-                children=[
-                    html.Span(metric, style={"font-weight": "bold"}),
-                    html.Span(": ", style={"margin-right": "4px"}),
-                    html.Span(avg_values[i], style={"font-weight": "normal"}),
-                ],
-                style={"margin-bottom": "4px"},
-            )
-        )
-    return metric_elements
-
-team_stats = {
-    'Team': ['Team A', 'Team B'],
-    'Shots': [20, 10],
-    'Color': ['blue', 'red']
-}
+    return [html.Div(avg_values[i], className="m-4") for i in range(len(categories))]
 
 
 ####################### PAGE LAYOUT #############################
@@ -155,7 +131,7 @@ layout = html.Div(
             className="row",
             children=[
                 html.Div(
-                    className="col-2",
+                    className="col-2 d-flex flex-column justify-content-center align-items-center",
                     children=[
                         html.H2(id="faculty1-name", className="mb-4"),
                         dcc.Dropdown(
@@ -181,13 +157,12 @@ layout = html.Div(
                             style={"width": "100%", "backgroundColor": "#212529"},
                             className="bg-dark text-light border border-light",
                         ),
-                        html.Div(id="avg-metrics-1", style={"margin-top": "16px"}),
                     ],
                 ),
                 # radar
                 html.Div([dcc.Graph(id="graph-container")], className="col-8"),
                 html.Div(
-                    className="col-2",
+                    className="col-2 d-flex flex-column justify-content-center align-items-center",
                     children=[
                         html.H2(id="faculty2-name", className="mb-4"),
                         dcc.Dropdown(
@@ -213,9 +188,20 @@ layout = html.Div(
                             style={"width": "100%", "backgroundColor": "#212529"},
                             className="bg-dark text-light border border-light",
                         ),
-                        html.Div(id="avg-metrics-2", style={"margin-top": "16px"}),
                     ],
                 ),
+            ],
+        ),  # div 1
+        html.Div(
+            className="row mt-4",
+            children=[
+                html.Div(id="avg-metrics-1", className="col-3 text-center fw-semibold fs-4"),
+                html.Div(className="col-6 text-center",
+                    children=[
+                        html.Div(metric, className="m-4 fw-semibold fs-4") for metric in categories
+                    ]
+                ),
+                html.Div(id="avg-metrics-2", className="col-3 text-center fw-semibold fs-4"),
             ],
         ),
     ],
