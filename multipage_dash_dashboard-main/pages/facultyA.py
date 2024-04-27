@@ -50,7 +50,7 @@ fig3.update_layout(
         xanchor="right",
         x=1,
     ),
-    font=dict(color="white"),  # Change font color to white
+    font=dict(color="white", size=16),  # Change font color to white
 )
 
 faculty_data = {
@@ -214,7 +214,9 @@ layout = html.Div(
                                         # Graph column
                                         html.Div(
                                             className="col-md-12",
-                                            children=[dcc.Graph(id="timeseries-graph-A")],
+                                            children=[
+                                                dcc.Graph(id="timeseries-graph-A")
+                                            ],
                                         )
                                     ],
                                 )
@@ -271,7 +273,18 @@ layout = html.Div(
                 for metric_data in metricwise_avg
             ],
         ),  # div 2 ends
-        html.H1("Subject-wise Comparison"),
+        html.H1("Subject-wise Comparison", className="text-center mt-4"),
         html.Div(html.Div([dcc.Graph(figure=fig3)])),
+        html.H1("Textual Feedback Overview", className="text-center mt-4"),
+        html.Img(
+            src="../assets/A.png",
+            className="",
+            style={"width":"35%", "margin-left": "5%"},
+        ),
+        html.Img(
+            src="../assets/A2.png",
+            className="",
+            style={ "margin": "5%", "width":"50%"},
+        ),
     ],
 )
