@@ -90,13 +90,13 @@ metrics = [
 
 # for 6 bar plots
 metricwise_avg = [
-    {"Subject Knowledge": [15, 25, 20, 20, 20]},
-    {"Regularity & Punctuality": [10, 20, 25, 25, 20]},
-    {"Communication Skills": [20, 20, 20, 25, 15]},
-    {"Syllabus Coverage": [15, 20, 25, 25, 15]},
-    {"Interest Generated in Subject": [10, 15, 46, 25, 20]},
-    {"Faculty Preparation": [20, 15, 20, 25, 20]},
-    {"Overall Acceptance": [20, 15, 20, 25, 20]},
+    {"Subject Knowledge": [14, 22, 27, 31, 6]},
+    {"Regularity & Punctuality": [9, 15, 25, 30, 21]},
+    {"Communication Skills": [18, 24, 29, 22, 7]},
+    {"Syllabus Coverage": [12, 18, 28, 27, 15]},
+    {"Interest Generated in Subject": [6, 12, 25, 31, 26]},
+    {"Faculty Preparation": [16, 20, 26, 26, 12]},
+    {"Overall Acceptance": [10, 16, 28, 31, 15]},
 ]
 
 

@@ -90,14 +90,15 @@ metrics = [
 
 # for 6 bar plots
 metricwise_avg = [
-    {"Subject Knowledge": [15, 25, 20, 20, 20]},
-    {"Regularity & Punctuality": [10, 20, 25, 25, 20]},
-    {"Communication Skills": [20, 20, 20, 25, 15]},
-    {"Syllabus Coverage": [15, 20, 25, 25, 15]},
-    {"Interest Generated in Subject": [10, 15, 46, 25, 20]},
-    {"Faculty Preparation": [20, 15, 20, 25, 20]},
-    {"Overall Acceptance": [20, 15, 20, 25, 20]},
+    {"Subject Knowledge": [12, 20, 28, 25, 15]},
+    {"Regularity & Punctuality": [8, 17, 25, 27, 23]},
+    {"Communication Skills": [7, 15, 25, 30, 23]},
+    {"Syllabus Coverage": [6, 15, 25, 30, 24]},
+    {"Interest Generated in Subject": [7, 15, 23, 30, 25]},
+    {"Faculty Preparation": [8, 18, 25, 27, 22]},
+    {"Overall Acceptance": [9, 18, 28, 25, 20]},
 ]
+
 
 
 def create_graph(selected_metric="Overall Acceptance"):

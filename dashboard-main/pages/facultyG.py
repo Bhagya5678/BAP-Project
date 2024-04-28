@@ -90,13 +90,13 @@ metrics = [
 
 # for 6 bar plots
 metricwise_avg = [
-    {"Subject Knowledge": [15, 25, 20, 20, 20]},
-    {"Regularity & Punctuality": [10, 20, 25, 25, 20]},
-    {"Communication Skills": [20, 20, 20, 25, 15]},
-    {"Syllabus Coverage": [15, 20, 25, 25, 15]},
-    {"Interest Generated in Subject": [10, 15, 46, 25, 20]},
-    {"Faculty Preparation": [20, 15, 20, 25, 20]},
-    {"Overall Acceptance": [20, 15, 20, 25, 20]},
+    {"Subject Knowledge": [15, 20, 27, 22, 16]},
+    {"Regularity & Punctuality": [10, 18, 25, 25, 22]},
+    {"Communication Skills": [8, 15, 23, 30, 24]},
+    {"Syllabus Coverage": [7, 15, 25, 30, 23]},
+    {"Interest Generated in Subject": [6, 14, 25, 30, 25]},
+    {"Faculty Preparation": [9, 18, 25, 26, 22]},
+    {"Overall Acceptance": [10, 19, 28, 25, 18]},
 ]
 
 
@@ -218,7 +218,9 @@ layout = html.Div(
                                         # Graph column
                                         html.Div(
                                             className="col-md-12",
-                                            children=[dcc.Graph(id="timeseries-graph-G")],
+                                            children=[
+                                                dcc.Graph(id="timeseries-graph-G")
+                                            ],
                                         )
                                     ],
                                 )
@@ -280,12 +282,12 @@ layout = html.Div(
         html.Img(
             src="../assets/G.png",
             className="",
-            style={"width":"35%", "margin-left": "5%"},
+            style={"width": "35%", "margin-left": "5%"},
         ),
         html.Img(
             src="../assets/G2.png",
             className="",
-            style={ "margin": "5%", "width":"50%"},
+            style={"margin": "5%", "width": "50%"},
         ),
     ],
 )
