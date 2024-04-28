@@ -164,7 +164,7 @@ layout = html.Div(
                                 "data": [
                                     {
                                         "x": metrics,
-                                        "y": [4.2, 4.5, 3.9, 4.7, 4.3, 4.6, 4.4],
+                                        "y": [4, 3.7, 3.9, 4.1, 3.8, 3.6, 4],
                                         "type": "bar",
                                         "marker": {"color": colors},
                                     }

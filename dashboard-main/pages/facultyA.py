@@ -89,7 +89,7 @@ metrics = [
     "Overall Acceptance",
 ]
 
-# for 6 bar plots
+# for 6 bar plots, frequency distribution   
 metricwise_avg = [
     {"Subject Knowledge": [14, 22, 27, 31, 6]},
     {"Regularity & Punctuality": [9, 15, 25, 30, 21]},
@@ -165,7 +165,7 @@ layout = html.Div(
                                 "data": [
                                     {
                                         "x": metrics,
-                                        "y": [4.2, 4.5, 3.9, 4.7, 4.3, 4.6, 4.4],
+                                        "y": [4.4, 4.1, 4.3, 4.6, 4.2, 4.5, 4],
                                         "type": "bar",
                                         "marker": {"color": colors},
                                     }
