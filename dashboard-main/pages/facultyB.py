@@ -25,7 +25,7 @@ colors = ["#6e78ff", "#6c8dfa", "#6aa1f4", "#68b6ef", "#65cbe9", "#63dfe4", "#61
 fig3 = go.Figure()
 
 fig3.add_trace(
-    go.Scatterpolar(r=data_set1, theta=categories, fill="toself", name="DBMS")
+    go.Scatterpolar(r=data_set1, theta=categories, fill="toself", name="BDA")
 )
 
 fig3.add_trace(go.Scatterpolar(r=data_set2, theta=categories, fill="toself", name="OS"))
@@ -128,7 +128,7 @@ def update_graph(selected_metric):
 layout = html.Div(
     className="mt-4 p-4",
     children=[
-        html.H1("Faculty A"),  # heading separate line
+        html.H1("Faculty B"),  # heading separate line
         html.Hr(),
         html.Div(
             className="row mt-4",

@@ -25,10 +25,10 @@ colors = ["#ff5800", "#ff7400", "#ff9000", "#ffac00", "#ffc700", "#ffe300", "#ff
 fig3 = go.Figure()
 
 fig3.add_trace(
-    go.Scatterpolar(r=data_set1, theta=categories, fill="toself", name="DBMS")
+    go.Scatterpolar(r=data_set1, theta=categories, fill="toself", name="DAA")
 )
 
-fig3.add_trace(go.Scatterpolar(r=data_set2, theta=categories, fill="toself", name="OS"))
+fig3.add_trace(go.Scatterpolar(r=data_set2, theta=categories, fill="toself", name=""))
 
 fig3.update_layout(
     autosize=True,
