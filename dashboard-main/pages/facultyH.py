@@ -66,13 +66,13 @@ faculty_data = {
 
 # Sfor time series graph
 data = {
-    "Subject Knowledge": [4, 4.2, 4.3, 4.4, 4.5, 4.6],
-    "Regularity & Punctuality": [3.8, 3.9, 3.7, 3.8, 3.9, 4],
-    "Communication Skills": [4.2, 4.3, 4.4, 4.5, 4.6, 4.7],
-    "Syllabus Coverage": [4, 4.1, 4.2, 4.3, 4.4, 4.5],
-    "Interest Generated in Subject": [3.9, 4, 4.1, 4.2, 4.3, 4.4],
-    "Faculty Preparation": [4.1, 4.2, 4.3, 4.4, 4.5, 4.6],
-    "Overall Acceptance": [4.2, 4.3, 4.4, 4.5, 4.6, 4.7],
+    "Subject Knowledge": [4.3, 4.1, 4.2, 4.6, 3.9, 4.4],
+    "Regularity & Punctuality": [3.7, 3.9, 4, 3.8, 4.1, 3.6],
+    "Communication Skills": [4.5, 4.4, 4.2, 4.1, 4.7, 4.6],
+    "Syllabus Coverage": [4.1, 4.3, 4.2, 4.5, 4, 4.4],
+    "Interest Generated in Subject": [4.2, 3.9, 4.4, 4.1, 4.5, 4.3],
+    "Faculty Preparation": [4.3, 4.1, 4.4, 4.2, 4.6, 4.5],
+    "Overall Acceptance": [4.4, 4.1, 4.7, 4.3, 3.9, 4.6],
 }
 
 # Years for x-axis
@@ -98,7 +98,6 @@ metricwise_avg = [
     {"Faculty Preparation": [8, 18, 25, 27, 22]},
     {"Overall Acceptance": [9, 18, 28, 25, 20]},
 ]
-
 
 
 def create_graph(selected_metric="Overall Acceptance"):
@@ -219,7 +218,9 @@ layout = html.Div(
                                         # Graph column
                                         html.Div(
                                             className="col-md-12",
-                                            children=[dcc.Graph(id="timeseries-graph-H")],
+                                            children=[
+                                                dcc.Graph(id="timeseries-graph-H")
+                                            ],
                                         )
                                     ],
                                 )
@@ -281,12 +282,12 @@ layout = html.Div(
         html.Img(
             src="../assets/H.png",
             className="",
-            style={"width":"35%", "margin-left": "5%"},
+            style={"width": "35%", "margin-left": "5%"},
         ),
         html.Img(
             src="../assets/H2.png",
             className="",
-            style={ "margin": "5%", "width":"50%"},
+            style={"margin": "5%", "width": "50%"},
         ),
     ],
 )

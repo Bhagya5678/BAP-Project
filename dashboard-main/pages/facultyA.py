@@ -66,14 +66,15 @@ faculty_data = {
 
 # for time series graph
 data = {
-    "Subject Knowledge": [4, 4.2, 4.3, 4.4, 4.5, 4.6],
-    "Regularity & Punctuality": [3.8, 3.9, 3.7, 3.8, 3.9, 4],
-    "Communication Skills": [4.2, 4.3, 4.4, 4.5, 4.6, 4.7],
-    "Syllabus Coverage": [4, 4.1, 4.2, 4.3, 4.4, 4.5],
-    "Interest Generated in Subject": [3.9, 4, 4.1, 4.2, 4.3, 4.4],
-    "Faculty Preparation": [4.1, 4.2, 4.3, 4.4, 4.5, 4.6],
-    "Overall Acceptance": [4.2, 4.3, 4.4, 4.5, 4.6, 4.7],
+    "Subject Knowledge": [4.5, 4.2, 4.3, 4.4, 3.9, 4.6],
+    "Regularity & Punctuality": [3.9, 3.8, 4, 3.7, 4.1, 3.8],
+    "Communication Skills": [4.6, 4.3, 4.4, 4.2, 4.7, 4.5],
+    "Syllabus Coverage": [4.3, 4.1, 4.2, 4.5, 4, 4.4],
+    "Interest Generated in Subject": [4.2, 4.1, 3.9, 4.4, 4.3, 4],
+    "Faculty Preparation": [4.4, 4.1, 4.3, 4.6, 4.2, 4.5],
+    "Overall Acceptance": [4.6, 4.3, 4.2, 4.7, 4.1, 4.4],
 }
+
 
 # Years for x-axis
 years = [2019, 2020, 2021, 2022, 2023, 2024]
@@ -98,7 +99,6 @@ metricwise_avg = [
     {"Faculty Preparation": [16, 20, 26, 26, 12]},
     {"Overall Acceptance": [10, 16, 28, 31, 15]},
 ]
-
 
 
 def create_graph(selected_metric="Overall Acceptance"):
