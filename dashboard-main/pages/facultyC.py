@@ -107,7 +107,7 @@ def create_graph(selected_metric="Overall Acceptance"):
         labels={"x": "Year", "y": selected_metric},
         markers=True,
     )
-    fig.update_traces(line_color=colors[0], marker_color=colors[3])
+    fig.update_traces(line_color=colors[6], marker_color=colors[4])
     fig.update_layout(
         paper_bgcolor="#212529",
         plot_bgcolor="#212529",
@@ -175,7 +175,7 @@ layout = html.Div(
                                     },
                                     "plot_bgcolor": "#212529",
                                     "paper_bgcolor": "#212529",
-                                    "xaxis": {"showticklabels": False},
+                                    "xaxis": {"showticklabels": True, "tickfont": {"color": "white"}},
                                     "yaxis": {"tickfont": {"color": "white"}},
                                 },
                             },

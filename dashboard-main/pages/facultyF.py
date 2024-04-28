@@ -177,7 +177,7 @@ layout = html.Div(
                                     },
                                     "plot_bgcolor": "#212529",
                                     "paper_bgcolor": "#212529",
-                                    "xaxis": {"showticklabels": False},
+                                    "xaxis": {"showticklabels": True, "tickfont": {"color": "white"}},
                                     "yaxis": {"tickfont": {"color": "white"}},
                                 },
                             },
