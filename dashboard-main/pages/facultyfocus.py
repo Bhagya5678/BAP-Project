@@ -6,7 +6,6 @@ import dash_bootstrap_components as dbc
 
 dash.register_page(__name__, path="/facultyfocus", name="Faculty Focus")
 
-data = pd.read_csv("feedback.csv")
 
 faculty_data = [
     {
@@ -67,7 +66,7 @@ faculty_data = [
     },
 ]
 
-unique_faculty = data["Faculty"].unique()
+unique_faculty = ["A", "B", "C", "D", "E", "F", "G", "H"]
 ####################### PAGE LAYOUT #############################
 layout = html.Div(
     className="container-fluid mt-5",
