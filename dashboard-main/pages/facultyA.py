@@ -16,8 +16,8 @@ categories = [
     "Interest Generated in Subject",
     "Faculty Preparation",
 ]
-data_set1 = [4, 3, 2, 5, 4, 3]
-data_set2 = [3, 4, 3, 4, 2, 5]
+data_set1 = [3.5, 4.2, 2.4, 4.6, 3.9, 2.8]
+data_set2 = [4.7, 3.1, 4.9, 2.3, 3.6, 2.7]
 
 colors = ["#F55C7A", "#F56C77", "#F57C73", "#F68C70", "#F69C6D", "#F6AC69", "#F6BC66"]
 
